@@ -22,7 +22,7 @@ public class FileReader {
             scanner.close();
 
         } catch (IOException e) {
-
+            e.printStackTrace();
         }
         return code;
     }
