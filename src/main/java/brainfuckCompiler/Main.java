@@ -1,6 +1,6 @@
 package brainfuckCompiler;
 
-import brainfuckCompiler.implementation.BrainfuckCompilerImpl;
+import brainfuckCompiler.impl.BrainfuckCompilerImpl;
 
 public class Main {
 

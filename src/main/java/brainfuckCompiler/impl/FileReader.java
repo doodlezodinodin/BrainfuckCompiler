@@ -1,4 +1,4 @@
-package brainfuckCompiler.implementation;
+package brainfuckCompiler.impl;
 
 import java.io.File;
 import java.io.IOException;
