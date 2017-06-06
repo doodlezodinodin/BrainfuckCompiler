@@ -20,9 +20,19 @@ public class EvaluationVisitor implements LexemeVisitor {
     }
 
     @Override
-    public void visit(CommandLexeme lexeme) {
+    public void visit(ShiftLexeme lexeme) {
         i++;
         System.out.println(i);
+    }
+
+    @Override
+    public void visit(AddLexeme lexeme) {
+
+    }
+
+    @Override
+    public void visit(OutLexeme lexeme) {
+
     }
 
     @Override

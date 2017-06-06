@@ -3,11 +3,11 @@ package brainfuckCompiler.impl.lexeme;
 import brainfuckCompiler.EvaluationException;
 import brainfuckCompiler.impl.command.Command;
 
-public class CommandLexeme implements Lexeme {
+public class OutLexeme implements Lexeme {
 
     private final Command command;
 
-    public CommandLexeme(Command command) {
+    public OutLexeme(Command command) {
         this.command = command;
     }
 

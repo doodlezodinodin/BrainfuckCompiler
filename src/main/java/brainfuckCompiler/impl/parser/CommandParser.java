@@ -2,8 +2,8 @@ package brainfuckCompiler.impl.parser;
 
 import brainfuckCompiler.impl.ProgramCodeReader;
 import brainfuckCompiler.impl.command.Command;
-import brainfuckCompiler.impl.lexeme.CommandLexeme;
 import brainfuckCompiler.impl.lexeme.Lexeme;
+import brainfuckCompiler.impl.lexeme.LexemeFactory;
 
 public class CommandParser implements ProgramCodeParser {
 
@@ -25,7 +25,9 @@ public class CommandParser implements ProgramCodeParser {
 
                 final Command command = factory.getCommands(representation);
 
-                return new CommandLexeme(command);
+                final LexemeFactory lexemeFactory = new LexemeFactory(command);
+
+                return lexemeFactory.createLexeme(representation);
             }
 
         }
