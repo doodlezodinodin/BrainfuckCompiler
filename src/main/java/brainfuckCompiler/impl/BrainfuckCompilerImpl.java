@@ -1,6 +1,7 @@
 package brainfuckCompiler.impl;
 
 import brainfuckCompiler.BrainfuckCompiler;
+import brainfuckCompiler.EvaluationException;
 import brainfuckCompiler.impl.lexeme.Lexeme;
 import brainfuckCompiler.impl.parser.ParserFactory;
 import brainfuckCompiler.impl.parser.ProgramCodeParser;
@@ -12,7 +13,7 @@ public class BrainfuckCompilerImpl implements BrainfuckCompiler {
     private final ParserFactory parserFactory = new ParserFactory();
 
     @Override
-    public void evaluate(String filePath) {
+    public void evaluate(String filePath) throws EvaluationException {
 
         if (filePath == null || filePath.isEmpty()) {
             throw new IllegalArgumentException("The path to the file is null or empty.");
@@ -35,14 +36,16 @@ public class BrainfuckCompilerImpl implements BrainfuckCompiler {
             state = moveForward(state, visitor);
 
             if (state == null) {
-                System.out.println("Error");
+                throw new EvaluationException("Invalid expression format. [error position: " + visitor.getReader().getParsePosition() + "]", visitor.getReader().getParsePosition());
             }
+
+            System.out.println("State: " + state);
 
         }
 
     }
 
-    private State moveForward(State currentState, EvaluationVisitor visitor){
+    private State moveForward(State currentState, EvaluationVisitor visitor) throws EvaluationException {
 
         for (State possibleState : matrix.getPossibleTransitions(currentState)) {
 

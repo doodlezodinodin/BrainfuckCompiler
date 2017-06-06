@@ -4,9 +4,9 @@ import brainfuckCompiler.impl.BrainfuckCompilerImpl;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EvaluationException {
 
         BrainfuckCompiler compiler = new BrainfuckCompilerImpl();
-        compiler.evaluate("res//BrainfuckProgram00.txt");
+        compiler.evaluate("res//program00.txt");
     }
 }
