@@ -2,13 +2,12 @@ package brainfuckCompiler.impl.parser;
 
 import brainfuckCompiler.impl.ProgramCodeReader;
 import brainfuckCompiler.impl.command.Command;
-import brainfuckCompiler.impl.command.ShiftCommandFactory;
+import brainfuckCompiler.impl.lexeme.CommandLexeme;
 import brainfuckCompiler.impl.lexeme.Lexeme;
-import brainfuckCompiler.impl.lexeme.ShiftLexeme;
 
-public class ShiftCommandParser implements ProgramCodeParser {
+public class CommandParser implements ProgramCodeParser {
 
-    private final ShiftCommandFactory factory = new ShiftCommandFactory();
+    private final CommandFactory factory = new CommandFactory();
 
     @Override
     public Lexeme parse(ProgramCodeReader reader) {
@@ -26,12 +25,11 @@ public class ShiftCommandParser implements ProgramCodeParser {
 
                 final Command command = factory.getCommands(representation);
 
-                return new ShiftLexeme(command);
+                return new CommandLexeme(command);
             }
 
         }
 
         return null;
     }
-
 }

@@ -39,7 +39,7 @@ public class BrainfuckCompilerImpl implements BrainfuckCompiler {
                 throw new EvaluationException("Invalid expression format. [error position: " + visitor.getReader().getParsePosition() + "]", visitor.getReader().getParsePosition());
             }
 
-            System.out.println("State: " + state);
+            //System.out.println("State: " + state);
 
         }
 

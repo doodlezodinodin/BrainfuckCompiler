@@ -12,11 +12,9 @@ public class TransitionMatrix {
 
     private final Map<State, Set<State>> transitions = new HashMap<State, Set<State>>() {{
 
-        put(START, of(SHIFT, ADD));
+        put(START, of(COMMAND));
 
-        put(SHIFT, of(SHIFT, ADD, FINISH));
-
-        put(ADD, of(SHIFT, ADD, FINISH));
+        put(COMMAND, of(COMMAND, FINISH));
 
         put(FINISH, noneOf(State.class));
     }};

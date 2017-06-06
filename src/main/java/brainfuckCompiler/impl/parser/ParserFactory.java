@@ -11,9 +11,7 @@ public class ParserFactory {
 
     private final Map<State, ProgramCodeParser> parsers = new HashMap<State, ProgramCodeParser>() {{
 
-        put(SHIFT, new ShiftCommandParser());
-
-        put(ADD, new AddCommandParser());
+        put(COMMAND, new CommandParser());
 
         put(FINISH, new FinishParser());
     }};

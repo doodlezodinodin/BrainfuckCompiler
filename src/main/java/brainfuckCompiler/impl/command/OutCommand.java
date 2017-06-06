@@ -1,6 +1,6 @@
 package brainfuckCompiler.impl.command;
 
-public class ShiftCommand implements Command {
+public class OutCommand implements Command {
     @Override
     public void evaluate() {
 

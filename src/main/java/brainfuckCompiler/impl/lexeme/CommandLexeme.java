@@ -1,12 +1,13 @@
 package brainfuckCompiler.impl.lexeme;
 
+import brainfuckCompiler.EvaluationException;
 import brainfuckCompiler.impl.command.Command;
 
-public class AddLexeme implements Lexeme {
+public class CommandLexeme implements Lexeme {
 
     private final Command command;
 
-    public AddLexeme(Command command) {
+    public CommandLexeme(Command command) {
         this.command = command;
     }
 
@@ -15,7 +16,7 @@ public class AddLexeme implements Lexeme {
     }
 
     @Override
-    public void acceptVisitor(LexemeVisitor visitor) {
+    public void acceptVisitor(LexemeVisitor visitor) throws EvaluationException {
         visitor.visit(this);
     }
 }

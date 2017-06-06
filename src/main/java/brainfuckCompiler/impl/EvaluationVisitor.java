@@ -1,9 +1,6 @@
 package brainfuckCompiler.impl;
 
-import brainfuckCompiler.impl.lexeme.AddLexeme;
-import brainfuckCompiler.impl.lexeme.FinishLexeme;
-import brainfuckCompiler.impl.lexeme.LexemeVisitor;
-import brainfuckCompiler.impl.lexeme.ShiftLexeme;
+import brainfuckCompiler.impl.lexeme.*;
 
 public class EvaluationVisitor implements LexemeVisitor {
 
@@ -23,14 +20,9 @@ public class EvaluationVisitor implements LexemeVisitor {
     }
 
     @Override
-    public void visit(ShiftLexeme lexeme) {
+    public void visit(CommandLexeme lexeme) {
         i++;
         System.out.println(i);
-    }
-
-    @Override
-    public void visit(AddLexeme lexeme) {
-
     }
 
     @Override
