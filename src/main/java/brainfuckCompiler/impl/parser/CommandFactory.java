@@ -1,9 +1,6 @@
 package brainfuckCompiler.impl.parser;
 
-import brainfuckCompiler.impl.command.AddCommand;
-import brainfuckCompiler.impl.command.Command;
-import brainfuckCompiler.impl.command.OutCommand;
-import brainfuckCompiler.impl.command.ShiftCommand;
+import brainfuckCompiler.impl.command.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +14,8 @@ public class CommandFactory {
         put("+", new AddCommand());
         put("-", new AddCommand());
         put(".", new OutCommand());
+        put("[", new CycleStartCommand());
+        put("]", new CycleEndCommand());
     }};
 
 

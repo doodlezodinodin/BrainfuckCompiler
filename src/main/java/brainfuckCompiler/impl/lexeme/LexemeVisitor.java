@@ -8,6 +8,10 @@ public interface LexemeVisitor {
 
     void visit(OutLexeme lexeme);
 
+    void visit(CycleStartLexeme lexeme);
+
+    void visit(CycleEndLexeme lexeme);
+
     void visit(FinishLexeme lexeme);
 
 }

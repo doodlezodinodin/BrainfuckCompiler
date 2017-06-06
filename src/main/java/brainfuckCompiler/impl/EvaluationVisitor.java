@@ -27,12 +27,26 @@ public class EvaluationVisitor implements LexemeVisitor {
 
     @Override
     public void visit(AddLexeme lexeme) {
-
+        i++;
+        System.out.println(i);
     }
 
     @Override
     public void visit(OutLexeme lexeme) {
+        i++;
+        System.out.println(i);
+    }
 
+    @Override
+    public void visit(CycleStartLexeme lexeme) {
+        i++;
+        System.out.println(i);
+    }
+
+    @Override
+    public void visit(CycleEndLexeme lexeme) {
+        i++;
+        System.out.println(i);
     }
 
     @Override
